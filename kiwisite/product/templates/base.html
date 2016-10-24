@@ -1,0 +1,13 @@
+<header>HI, it`s steelkiwi test case. Header</header>
+{% if user.is_authenticated %}
+    <p>Welcome, {{ user.username }}. Thanks for logging in. Yoy may visit secret page
+    	<!--<a href=" url 'django.contrib.auth.views.logout' ?next= url 'product:index' ">logout?</a>-->
+    </p>
+{% else %}
+    <p>Welcome, new user. Please log in to see secret page. 
+    	<!--<a href=" url 'django.contrib.auth.views.login' ">Login?</a>-->
+    </p>
+{% endif %}
+{% block content %}
+{% endblock %}
+<footer>It`s footer. All rights reserved(c)</footer>
