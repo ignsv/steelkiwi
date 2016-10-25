@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>You may check current product page , that name is <strong>{{product.name}}</strong></p>
+<ul>
+    <li>name : {{ product.name }}</li>
+
+    <li>description : {{ product.description}}</li>
+
+    <li>price : {{ product.price}}</li>
+
+</ul>
+
+
+{% endblock content %}

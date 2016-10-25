@@ -26,8 +26,15 @@ def categories(request):
     }
     return render(request, 'product/categories.html', context)
 
-def product(request):
-    pass
+
+def product(request, category_slug, product_slug):
+    category = get_object_or_404(Category, slug=category_slug)
+    product = get_object_or_404(Product, slug=product_slug)
+    context = {
+        'product': product,
+    }
+    return render(request, 'product/product.html', context)
+
 
 def secret(request):
     pass

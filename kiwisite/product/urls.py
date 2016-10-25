@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^products/$', views.categories, name='categories'),
     url(r'^products/(?P<category_slug>[\w-]+)/$', views.products, name='products'),
-    url(r'^products/(?P<category_slug>[\w-]+)/(?P<category_slug>[\w-]+)/$', views.products, name='product'),
+    url(r'^products/(?P<category_slug>[\w-]+)/(?P<product_slug>[\w-]+)/$', views.product, name='product'),
 ]

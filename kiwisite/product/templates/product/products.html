@@ -13,7 +13,7 @@
 
                 <li>price : {{ product.price}}</li>
 
-                <li><a href="{% url 'product:index'%}">Read more</a></li>
+                <li><a href="{% url 'product:product' category.slug product.slug %}">Read more</a></li>
             </ul>
         </li>
     {% endfor %}
