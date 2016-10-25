@@ -19,12 +19,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%7(@yu)gamwiy9@doai*7sel45fw6*p#=_lyae9e364uk^ey%g'
+#ask admin for this information
+SECRET_KEY = '***********************'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# in prodaction
+DEBUG = False
 
+#add allowed hosts
 ALLOWED_HOSTS = []
 
 
@@ -79,7 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': os.path.join(BASE_DIR, "kiwisite","my.cnf"),
+            'read_default_file': os.path.join(BASE_DIR, 'settings', "my.cnf"),
         },
     }
 }

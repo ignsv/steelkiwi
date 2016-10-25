@@ -3,3 +3,4 @@
 kiwisite/kiwisite/__pycache__/*
 kiwisite/product/__pycache__/*
 kiwisite/product/migrations/__pycache__/*
+kiwisite/kiwisite/settings/__pycache__/*
