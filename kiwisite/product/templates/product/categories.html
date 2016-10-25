@@ -13,13 +13,13 @@
 
                 <li>slug : {{ category.slug}}</li>
 
-                <li><a href="{% url 'product:index' %}">Read more</a></li>
+                <li><a href="{% url 'product:products' category.slug%}">Read more</a></li>
             </ul>
         </li>
     {% endfor %}
     </ol>
 {% else %}
-    <p>There are no categories at all!.</p>
+    <p>There are no categories at all!</p>
 {% endif %}
 
 
