@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2> Check our categories!</h2>
+{% if category_list %}
+    <ol>
+    {% for category in category_list %}
+        <li>
+            <ul>
+                <li>name : {{ category.name }}</li>
+
+                <li>description : {{ category.description}}</li>
+
+                <li>slug : {{ category.slug}}</li>
+
+                <li><a href="{% url 'product:index' %}">Read more</a></li>
+            </ul>
+        </li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>There are no categories at all!.</p>
+{% endif %}
+
+
+{% endblock content %}

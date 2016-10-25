@@ -1,6 +1,6 @@
-<header>HI, it`s steelkiwi test case. Header</header>
+<header>HI, it`s steelkiwi test case</header>
 {% if user.is_authenticated %}
-    <p>Welcome, {{ user.username }}. Thanks for logging in. Yoy may visit secret page
+    <p>Welcome, {{ user.username }}. Thanks for logging. Now you may visit secret page
     	<!--<a href=" url 'django.contrib.auth.views.logout' ?next= url 'product:index' ">logout?</a>-->
     </p>
 {% else %}
@@ -10,4 +10,6 @@
 {% endif %}
 {% block content %}
 {% endblock %}
-<footer>It`s footer. All rights reserved(c)</footer>
+<footer>It`s footer. All rights reserved(c)
+    <a href="{% url 'product:index' %}">Home page</a>
+</footer>
