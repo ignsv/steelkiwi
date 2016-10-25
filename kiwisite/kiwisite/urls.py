@@ -17,7 +17,12 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 
+from django.contrib.auth import views as auth_views
+
 urlpatterns = [
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login',
+        {'template_name': 'admin/login.html'}),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout'),
     url(r'^admin/', admin.site.urls),
     url(r'', include('product.urls')),
 ]

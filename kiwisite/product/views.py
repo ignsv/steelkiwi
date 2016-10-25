@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.core.urlresolvers import reverse
+from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 import datetime
 
@@ -37,7 +37,7 @@ def product(request, category_slug, product_slug):
     }
     return render(request, 'product/product.html', context)
 
-
+@login_required
 def secret(request):
     now = timezone.now()
     product_lists = Product.objects.filter(created_at__lte = now, created_at__gte = now - datetime.timedelta(days=1))

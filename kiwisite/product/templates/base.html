@@ -1,11 +1,11 @@
 <header>HI, it`s steelkiwi test case</header>
 {% if user.is_authenticated %}
     <p>Welcome, {{ user.username }}. Thanks for authentication. Now you may visit secret page
-    	<!--<a href=" url 'django.contrib.auth.views.logout' ?next= url 'product:index' ">logout?</a>-->
+    	<a href="{% url 'django.contrib.auth.views.logout' %}?next={% url 'product:index' %}">logout</a>
     </p>
 {% else %}
     <p>Welcome, new user. Please login to see secret page.
-    	<!--<a href=" url 'django.contrib.auth.views.login' ">Login?</a>-->
+    	<a href=" {% url 'django.contrib.auth.views.login' %}">Login</a>
     </p>
 {% endif %}
 {% block content %}
