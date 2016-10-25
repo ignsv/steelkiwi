@@ -12,6 +12,8 @@ class Category(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
+        # auto slugify slugField only when Category instance creates
+        #remove if not self.id to auto slagify when Category instance updates
         if not self.id:
             self.slug = slugify(self.name)
 
@@ -31,6 +33,8 @@ class Product(models.Model):
         return self.name
 
     def save(self, *args, **kwargs):
+        # auto slugify slugField only when Product instance creates
+        # remove if not self.id to auto slagify when Product instance updates
         if not self.id:
             self.slug = slugify(self.name)
 
