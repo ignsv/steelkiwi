@@ -1,5 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.urlresolvers import reverse
+from django.utils import timezone
+import datetime
 
 from .models import Category, Product
 
@@ -37,4 +39,13 @@ def product(request, category_slug, product_slug):
 
 
 def secret(request):
-    pass
+    now = timezone.now()
+    product_lists = Product.objects.filter(created_at__lte = now, created_at__gte = now - datetime.timedelta(days=1))
+    #add Ukrainian timezone. Product model uses UTC. Ukraine time_zone = UTC+3 in summertime
+    for product in product_lists:
+        product.created_at += datetime.timedelta(hours=3)
+        product.modified_at += datetime.timedelta(hours=3)
+    context = {
+        "product_list": product_lists,
+    }
+    return render(request, 'product/secret.html', context)
